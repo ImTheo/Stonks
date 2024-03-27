@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://2uhupnmbfwps"]
+
+[ext_resource type="FontFile" uid="uid://b2frhwyn8618f" path="res://Assets/fonts/pricedown bl.otf" id="1_lcl6w"]
+[ext_resource type="Texture2D" uid="uid://cxr8oahqdbal5" path="res://Assets/storeItems/armor.png" id="2_176tm"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer_Item1" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button_Add" type="Button" parent="HBoxContainer_Item1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label_Add" type="Label" parent="HBoxContainer_Item1/Button_Add"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_lcl6w")
+theme_override_font_sizes/font_size = 150
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer_Item1"]
+layout_mode = 2
+texture = ExtResource("2_176tm")
+expand_mode = 2
+
+[node name="Button_Minus" type="Button" parent="HBoxContainer_Item1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label_Minus" type="Label" parent="HBoxContainer_Item1/Button_Minus"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -82.0
+offset_right = 26.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_lcl6w")
+theme_override_font_sizes/font_size = 150
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1

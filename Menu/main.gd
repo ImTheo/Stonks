@@ -1,16 +1,15 @@
 extends Control
 
 func _ready():
-	print("hola mundo")
+	pass
 
 func _on_button_buy_items_pressed():
-	pass # Replace with function body.
-
-
+	# Path to the buy items scene
+	print("why")
+	get_tree().change_scene_to_file("res://Menu/buyScene.tscn")
 
 func _on_button_view_invoices_pressed():
-	pass # Replace with function body.
-
+	print("invoice")
 
 func _on_button_exit_pressed():
-	pass # Replace with function body.
+	get_tree().quit()

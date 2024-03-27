@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dfj37cknkrjol" path="res://Assets/background.jpg" id="2_a5tm8"]
 [ext_resource type="FontFile" uid="uid://b2frhwyn8618f" path="res://Assets/fonts/pricedown bl.otf" id="3_dtxay"]
 
-[node name="Main" type="Control"]
+[node name="MainMenu" type="Control"]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -119,3 +119,7 @@ theme_override_fonts/font = ExtResource("3_dtxay")
 theme_override_font_sizes/font_size = 75
 text = "Exit"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_BuyItems" to="." method="_on_button_buy_items_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_ViewInvoices" to="." method="_on_button_view_invoices_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Button_Exit" to="." method="_on_button_exit_pressed"]
