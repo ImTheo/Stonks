@@ -1,0 +1,161 @@
+[gd_scene load_steps=6 format=3 uid="uid://t3ricgtsf1r2"]
+
+[ext_resource type="Script" path="res://Cart/PurchaseScene.gd" id="1_uxib5"]
+[ext_resource type="Texture2D" uid="uid://dfj37cknkrjol" path="res://Assets/background.jpg" id="2_6fiml"]
+[ext_resource type="FontFile" uid="uid://b2frhwyn8618f" path="res://Assets/fonts/pricedown bl.otf" id="3_w7hxu"]
+[ext_resource type="PackedScene" uid="uid://2uhupnmbfwps" path="res://Product/ProductContainer.tscn" id="4_uh23q"]
+
+[sub_resource type="Theme" id="Theme_f12e5"]
+
+[node name="PurchaseScene" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_uxib5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -14.0
+offset_right = 11.1519
+offset_bottom = 731.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6fiml")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_as_relative = false
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337255, 0.0392157, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("3_w7hxu")
+theme_override_font_sizes/font_size = 100
+text = "Stonks Store"
+horizontal_alignment = 1
+
+[node name="HBoxContainer_Products" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/separation = 200
+
+[node name="Product_1" parent="VBoxContainer/HBoxContainer_Products" instance=ExtResource("4_uh23q")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Product_2" parent="VBoxContainer/HBoxContainer_Products" instance=ExtResource("4_uh23q")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button_PurchaseItems" type="Button" parent="VBoxContainer/HBoxContainer"]
+light_mask = 0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 15.41
+theme = SubResource("Theme_f12e5")
+
+[node name="Title_Purchase_Items" type="Label" parent="VBoxContainer/HBoxContainer/Button_PurchaseItems"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.72549, 0.74902, 0.72549, 1)
+theme_override_fonts/font = ExtResource("3_w7hxu")
+theme_override_font_sizes/font_size = 75
+text = ">>>Purchase<<<"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2_Back" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Title_Back" type="Label" parent="VBoxContainer/HBoxContainer/Button2_Back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.337255, 0.0392157, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("3_w7hxu")
+theme_override_font_sizes/font_size = 75
+text = "🔙"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+light_mask = 0
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 146.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 954
+
+[node name="Button_PriorPage" type="Button" parent="VBoxContainer2/HBoxContainer"]
+z_as_relative = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Label_PriorPage" type="Label" parent="VBoxContainer2/HBoxContainer/Button_PriorPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+theme_override_font_sizes/font_size = 80
+text = "⬅️"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_NextPage" type="Button" parent="VBoxContainer2/HBoxContainer"]
+z_as_relative = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Label_NextPage" type="Label" parent="VBoxContainer2/HBoxContainer/Button_NextPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+theme_override_font_sizes/font_size = 80
+text = "➡️"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button_PurchaseItems" to="." method="_on_button_purchase_items_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2_Back" to="." method="_on_button_2_back_pressed"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Button_PriorPage" to="." method="_on_button_prior_page_pressed"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/Button_NextPage" to="." method="_on_button_next_page_pressed"]
