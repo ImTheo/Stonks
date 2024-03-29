@@ -79,8 +79,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.72549, 0.74902, 0.72549, 1)
 theme_override_fonts/font = ExtResource("3_0xnbs")
 theme_override_font_sizes/font_size = 75
-text = ">>>CONFIRM PURCHASE<<<"
-horizontal_alignment = 1
+text = "Purchase for:"
 vertical_alignment = 1
 
 [node name="Button2_Cancel" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -109,5 +108,5 @@ offset_right = 1152.0
 offset_bottom = 146.0
 size_flags_vertical = 3
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button_ConfirmPurchase" to="." method="_on_button_purchase_items_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button_ConfirmPurchase" to="." method="_on_button_confirm_purchase_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2_Cancel" to="." method="_on_button_2_cancel_pressed"]
