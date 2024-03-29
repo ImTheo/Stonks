@@ -1,8 +1,9 @@
 class_name Product
-var name:String
-var price:float
-var texture_asset:String
-var count:int
+extends Resource
+@export var name:String
+@export var price:float
+@export var texture_asset:String
+@export var count:int
 
 func _init(name:String,price:float,texture:String):
 	self.name = name

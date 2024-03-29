@@ -1,6 +1,7 @@
 extends Control
 
 @onready var products:Array[Product] = CartList.products
+var save_object = SaveResource.new()
 
 func _ready():
 	CartList.products = []
@@ -13,17 +14,19 @@ func _ready():
 		detail = "#" + str(product.count) + " x " + str(product.price) + "€"
 		invoice = detail + " " + header
 		itemList.add_item(invoice, load(product.texture_asset))
-	$VBoxContainer/HBoxContainer/Button_ConfirmPurchase/Title_ConfirmPurchase.text = "Purchase for: " + calculate_total() + "$"
+	$VBoxContainer/HBoxContainer/Button_ConfirmPurchase/Title_ConfirmPurchase.text = "Purchase for: " + str(calculate_total()) + "$"
 
 func _on_button_confirm_purchase_pressed():
-	pass
-	# append total to $VBoxContainer/HBoxContainer/Button2_Cancel/Title_Cancel
+	var invoice:Invoice = Invoice.new()
+	invoice.products = products
+	invoice.total = calculate_total()
+	save_object.write_saveInvoice(invoice)
 
-func calculate_total() -> String:
+func calculate_total() -> float:
 	var total:float = 0
 	for product:Product in products:
 		total += product.price * product.count
-	return str(total)
+	return total
 
 func _on_button_2_cancel_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")
