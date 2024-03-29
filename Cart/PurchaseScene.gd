@@ -1,3 +1,4 @@
+class_name Cart
 extends Control
 
 var products:Array[Product] = ProductsItems.new().products
@@ -15,25 +16,28 @@ func show_next_pages_buttons():
 	prior_button.disabled = current_page == 1
 	next_button.disabled = (current_page+1)*2 > products.size()+1
 
+func add_purchased_product(product:Product):
+	if CartList.products.find(product) == -1:
+		CartList.products.append(product)
 
 func show_products(page:int):
-	products_container[0].load_product(products[page*2-2])
+	products_container[0].load_product(products[page*2-2],self)
 	if (page*2-1) < products.size(): 
-		products_container[1].load_product(products[page*2-1])
+		products_container[1].load_product(products[page*2-1],self)
 		products_container[1].show()
 	else: 
 		products_container[1].hide()
+
 func _on_button_2_back_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")
 	
 func _on_button_purchase_items_pressed():
-	print("Purchase Items")
+	get_tree().change_scene_to_file("res://Checkout/Checkout.tscn")
 
 func _on_button_next_page_pressed():
 	current_page += 1
 	show_next_pages_buttons()
 	show_products(current_page)
-
 
 func _on_button_prior_page_pressed():
 	current_page -= 1

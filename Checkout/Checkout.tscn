@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj4opxph27qqx"]
+
+[ext_resource type="Script" path="res://Checkout/Checkout.gd" id="1_tp12l"]
+[ext_resource type="Texture2D" uid="uid://dfj37cknkrjol" path="res://Assets/background.jpg" id="2_3t6i1"]
+[ext_resource type="FontFile" uid="uid://b2frhwyn8618f" path="res://Assets/fonts/pricedown bl.otf" id="3_0xnbs"]
+[ext_resource type="Script" path="res://Checkout/ItemList.gd" id="4_ocvc7"]
+
+[sub_resource type="Theme" id="Theme_f12e5"]
+
+[node name="Checkout" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_tp12l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -14.0
+offset_right = 11.1519
+offset_bottom = 731.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3t6i1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_as_relative = false
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337255, 0.0392157, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("3_0xnbs")
+theme_override_font_sizes/font_size = 100
+text = "Stonks Store"
+horizontal_alignment = 1
+
+[node name="HBoxContainer_Products" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer/HBoxContainer_Products"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 80
+allow_search = false
+max_text_lines = 2
+fixed_icon_size = Vector2i(100, 100)
+script = ExtResource("4_ocvc7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button_ConfirmPurchase" type="Button" parent="VBoxContainer/HBoxContainer"]
+light_mask = 0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 15.41
+theme = SubResource("Theme_f12e5")
+
+[node name="Title_ConfirmPurchase" type="Label" parent="VBoxContainer/HBoxContainer/Button_ConfirmPurchase"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.72549, 0.74902, 0.72549, 1)
+theme_override_fonts/font = ExtResource("3_0xnbs")
+theme_override_font_sizes/font_size = 75
+text = ">>>CONFIRM PURCHASE<<<"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2_Cancel" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Title_Cancel" type="Label" parent="VBoxContainer/HBoxContainer/Button2_Cancel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.337255, 0.0392157, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("3_0xnbs")
+theme_override_font_sizes/font_size = 75
+text = "❌"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+light_mask = 0
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 146.0
+size_flags_vertical = 3
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button_ConfirmPurchase" to="." method="_on_button_purchase_items_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2_Cancel" to="." method="_on_button_2_cancel_pressed"]

@@ -15,6 +15,10 @@ run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+CartList="*res://cart_list.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -23,6 +27,7 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://Cart/": "orange",
+"res://Checkout/": "orange",
 "res://Product/": "orange",
 "res://Resources/": "orange"
 }

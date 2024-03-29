@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://2uhupnmbfwps"]
+[gd_scene load_steps=3 format=3 uid="uid://2uhupnmbfwps"]
 
 [ext_resource type="Script" path="res://Product/ProductContainer.gd" id="1_0ce2p"]
 [ext_resource type="FontFile" uid="uid://b2frhwyn8618f" path="res://Assets/fonts/pricedown bl.otf" id="1_lcl6w"]
-[ext_resource type="Texture2D" uid="uid://cxr8oahqdbal5" path="res://Assets/storeItems/armor.png" id="2_176tm"]
 
 [node name="VBoxContainer" type="VBoxContainer"]
 offset_right = 1152.0
@@ -34,7 +33,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 size_flags_stretch_ratio = 12.0
-texture = ExtResource("2_176tm")
 expand_mode = 3
 
 [node name="HBoxContainer_Item1" type="HBoxContainer" parent="."]
