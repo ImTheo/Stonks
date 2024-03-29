@@ -39,6 +39,5 @@ texture_asset = "res://Assets/storeItems/Spider_armor.png"
 count = 0
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("2_26sf0")
 products = Array[ExtResource("1_r6cns")]([SubResource("Resource_j8kqn"), SubResource("Resource_wfs2d"), SubResource("Resource_7nyer"), SubResource("Resource_3cnhr"), SubResource("Resource_tu303")])

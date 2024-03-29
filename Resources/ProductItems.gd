@@ -8,4 +8,3 @@ extends Resource
 ## {"name":"Ale","price":666,"texture":"res://Assets/storeItems/Adamantite_armor.png"}
 #]
 @export var products:Array[Product]
-#@export var lol:String = ""

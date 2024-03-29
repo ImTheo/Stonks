@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ProductsItems" load_steps=6 format=3 uid="uid://dlrqu3fj3gwo6"]
+
+[ext_resource type="Script" path="res://Product/Product.gd" id="1_x2noi"]
+[ext_resource type="Script" path="res://Resources/ProductItems.gd" id="2_5mqvv"]
+
+[sub_resource type="Resource" id="Resource_j8kqn"]
+script = ExtResource("1_x2noi")
+name = "Adamantium"
+price = 100.0
+texture_asset = "res://Assets/storeItems/Adamantite_armor.png"
+count = 0
+
+[sub_resource type="Resource" id="Resource_wfs2d"]
+script = ExtResource("1_x2noi")
+name = "Hallowed"
+price = 200.0
+texture_asset = "res://Assets/storeItems/Hallowed_armor.png"
+count = 0
+
+[sub_resource type="Resource" id="Resource_tu303"]
+script = ExtResource("1_x2noi")
+name = "Spider"
+price = 50.42
+texture_asset = "res://Assets/storeItems/Spider_armor.png"
+count = 0
+
+[resource]
+script = ExtResource("2_5mqvv")
+products = Array[ExtResource("1_x2noi")]([SubResource("Resource_j8kqn"), SubResource("Resource_wfs2d"), SubResource("Resource_tu303")])
