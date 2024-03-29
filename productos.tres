@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="ProductsItems" load_steps=8 format=3 uid="uid://ca83ryge56ohw"]
+
+[ext_resource type="Script" path="res://Product/Product.gd" id="1_r6cns"]
+[ext_resource type="Script" path="res://Resources/ProductItems.gd" id="2_26sf0"]
+
+[sub_resource type="Resource" id="Resource_j8kqn"]
+script = ExtResource("1_r6cns")
+name = "Ninja"
+price = 100.0
+texture_asset = "res://Assets/storeItems/ninja.png"
+count = 0
+
+[sub_resource type="Resource" id="Resource_wfs2d"]
+script = ExtResource("1_r6cns")
+name = "Hallowed"
+price = 200.0
+texture_asset = "res://Assets/storeItems/Hallowed_armor.png"
+count = 0
+
+[sub_resource type="Resource" id="Resource_7nyer"]
+script = ExtResource("1_r6cns")
+name = "Gladiator"
+price = 0.0
+texture_asset = "res://Assets/storeItems/Gladiator_armor_female.png"
+count = 0
+
+[sub_resource type="Resource" id="Resource_3cnhr"]
+script = ExtResource("1_r6cns")
+name = "Turtle"
+price = 123.0
+texture_asset = "res://Assets/storeItems/Turtle_armor.png"
+count = 0
+
+[sub_resource type="Resource" id="Resource_tu303"]
+script = ExtResource("1_r6cns")
+name = "Spider"
+price = 50.42
+texture_asset = "res://Assets/storeItems/Spider_armor.png"
+count = 0
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_26sf0")
+products = Array[ExtResource("1_r6cns")]([SubResource("Resource_j8kqn"), SubResource("Resource_wfs2d"), SubResource("Resource_7nyer"), SubResource("Resource_3cnhr"), SubResource("Resource_tu303")])

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveResource" load_steps=7 format=3]
+[gd_resource type="Resource" script_class="SaveResource" load_steps=7 format=3 uid="uid://bf23atyl7eu0p"]
 
 [ext_resource type="Script" path="res://Product/Product.gd" id="1_k20pt"]
 [ext_resource type="Script" path="res://Resources/Invoices.gd" id="2_c7nh7"]

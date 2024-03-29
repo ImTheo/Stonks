@@ -1,10 +1,10 @@
 class_name Cart
 extends Control
 
-@export var products:Array[Product] = ProductsItems.new().products
 @onready var products_container = [%Product_1,%Product_2]
 var current_page:int = 1
 var next_page:int = current_page + 1
+var products = preload("res://productos.tres").products
 
 func _ready():
 	show_next_pages_buttons()
