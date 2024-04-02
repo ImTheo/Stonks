@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="SaveResource" load_steps=7 format=3 uid="uid://dj5ur1vwx7pxo"]
+
+[ext_resource type="Script" path="res://Product/Product.gd" id="1_jecy0"]
+[ext_resource type="Script" path="res://Resources/Invoices.gd" id="2_bvh20"]
+[ext_resource type="Script" path="res://Checkout/save_invoice.gd" id="3_7b0ib"]
+
+[sub_resource type="Resource" id="Resource_j8kqn"]
+script = ExtResource("1_jecy0")
+name = "Ninja"
+price = 100.0
+texture_asset = "res://Assets/storeItems/ninja.png"
+count = 1
+
+[sub_resource type="Resource" id="Resource_tu303"]
+script = ExtResource("1_jecy0")
+name = "Spider"
+price = 50.42
+texture_asset = "res://Assets/storeItems/Spider_armor.png"
+count = 4
+
+[sub_resource type="Resource" id="Resource_b3t72"]
+script = ExtResource("2_bvh20")
+products = Array[ExtResource("1_jecy0")]([SubResource("Resource_j8kqn"), SubResource("Resource_tu303")])
+total = 301.68
+
+[resource]
+script = ExtResource("3_7b0ib")
+invoice = SubResource("Resource_b3t72")

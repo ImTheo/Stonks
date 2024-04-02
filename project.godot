@@ -28,6 +28,7 @@ window/stretch/mode="canvas_items"
 folder_colors={
 "res://Cart/": "orange",
 "res://Checkout/": "orange",
+"res://Invoice/": "orange",
 "res://Product/": "orange",
 "res://Resources/": "orange"
 }

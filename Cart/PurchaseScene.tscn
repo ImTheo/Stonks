@@ -1,9 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://t3ricgtsf1r2"]
+[gd_scene load_steps=12 format=3 uid="uid://t3ricgtsf1r2"]
 
 [ext_resource type="Script" path="res://Cart/PurchaseScene.gd" id="1_uxib5"]
 [ext_resource type="Texture2D" uid="uid://dfj37cknkrjol" path="res://Assets/background.jpg" id="2_6fiml"]
+[ext_resource type="Script" path="res://Product/Product.gd" id="2_61lgu"]
 [ext_resource type="FontFile" uid="uid://b2frhwyn8618f" path="res://Assets/fonts/pricedown bl.otf" id="3_w7hxu"]
 [ext_resource type="PackedScene" uid="uid://2uhupnmbfwps" path="res://Product/ProductContainer.tscn" id="4_uh23q"]
+
+[sub_resource type="Resource" id="Resource_j8kqn"]
+script = ExtResource("2_61lgu")
+name = "Ninja"
+price = 100.0
+texture_asset = "res://Assets/storeItems/ninja.png"
+count = 0
+
+[sub_resource type="Resource" id="Resource_wfs2d"]
+script = ExtResource("2_61lgu")
+name = "Hallowed"
+price = 200.0
+texture_asset = "res://Assets/storeItems/Hallowed_armor.png"
+count = 0
+
+[sub_resource type="Resource" id="Resource_7nyer"]
+script = ExtResource("2_61lgu")
+name = "Gladiator"
+price = 0.0
+texture_asset = "res://Assets/storeItems/Gladiator_armor_female.png"
+count = 0
+
+[sub_resource type="Resource" id="Resource_3cnhr"]
+script = ExtResource("2_61lgu")
+name = "Turtle"
+price = 123.0
+texture_asset = "res://Assets/storeItems/Turtle_armor.png"
+count = 0
+
+[sub_resource type="Resource" id="Resource_tu303"]
+script = ExtResource("2_61lgu")
+name = "Spider"
+price = 50.42
+texture_asset = "res://Assets/storeItems/Spider_armor.png"
+count = 0
 
 [sub_resource type="Theme" id="Theme_f12e5"]
 
@@ -18,6 +54,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_uxib5")
+products = Array[ExtResource("2_61lgu")]([SubResource("Resource_j8kqn"), SubResource("Resource_wfs2d"), SubResource("Resource_7nyer"), SubResource("Resource_3cnhr"), SubResource("Resource_tu303")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -119,6 +156,7 @@ theme_override_constants/separation = 954
 z_as_relative = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+disabled = true
 
 [node name="Label_PriorPage" type="Label" parent="VBoxContainer2/HBoxContainer/Button_PriorPage"]
 layout_mode = 1

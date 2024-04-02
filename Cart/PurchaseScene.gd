@@ -4,8 +4,7 @@ extends Control
 @onready var products_container = [%Product_1,%Product_2]
 var current_page:int = 1
 var next_page:int = current_page + 1
-var products = load("res://productos.tres").products
-
+@export var products:Array[Product] = load("res://productos.tres").products
 func _ready():
 	show_next_pages_buttons()
 	show_products(current_page)

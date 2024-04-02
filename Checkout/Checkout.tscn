@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dj4opxph27qqx"]
+[gd_scene load_steps=5 format=3 uid="uid://dj4opxph27qqx"]
 
 [ext_resource type="Script" path="res://Checkout/Checkout.gd" id="1_tp12l"]
 [ext_resource type="Texture2D" uid="uid://dfj37cknkrjol" path="res://Assets/background.jpg" id="2_3t6i1"]
 [ext_resource type="FontFile" uid="uid://b2frhwyn8618f" path="res://Assets/fonts/pricedown bl.otf" id="3_0xnbs"]
-[ext_resource type="Script" path="res://Checkout/ItemList.gd" id="4_ocvc7"]
 
 [sub_resource type="Theme" id="Theme_f12e5"]
 
@@ -51,18 +50,19 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ItemList" type="ItemList" parent="VBoxContainer/HBoxContainer_Products"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 80
 allow_search = false
 max_text_lines = 2
 fixed_icon_size = Vector2i(100, 100)
-script = ExtResource("4_ocvc7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Button_ConfirmPurchase" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 light_mask = 0
 layout_mode = 2
 size_flags_horizontal = 3
